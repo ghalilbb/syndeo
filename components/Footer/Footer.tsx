@@ -1,7 +1,7 @@
 'use client'
 
 import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube, IconPhone, IconMail, IconMapPin } from '@tabler/icons-react';
-import { ActionIcon, Anchor, Group, Typography, Grid, Stack, Text, Divider, Container } from '@mantine/core';
+import { ActionIcon, Anchor, Group, Grid, Stack, Text, Divider, Container } from '@mantine/core';
 import classes from './Footer.module.css';
 
 export function Footer() {

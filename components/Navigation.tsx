@@ -1,4 +1,4 @@
-import { AppShellNavbar, NavLink, Stack } from '@mantine/core';
+import { NavLink, Stack } from '@mantine/core';
 
 export function Navigation() {
   return (

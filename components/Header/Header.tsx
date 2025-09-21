@@ -1,10 +1,8 @@
 'use client'
 
-import { useState } from 'react';
-import { Burger, Center, Container, Group, Menu, Title } from '@mantine/core';
+import { Burger, Container, Group, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
-import { IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -62,7 +60,7 @@ export function Header() {
           <Link
         href="/"
       >
-        <Title style={{'paddingTop': '16px'}}><Image src={'/logo.jpg'} height={85} width={250} alt='Syndeo logo'></Image></Title>
+        <Title style={{'paddingTop': '16px'}}><Image src='/logo.jpg' height={85} width={250} alt='Syndeo logo'/></Title>
       </Link>
           <Group gap={5} visibleFrom="sm">
             {items}

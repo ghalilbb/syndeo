@@ -58,7 +58,7 @@ export default function AboutPage() {
     }
   };
 
-  const [data, setData] = useState();
+  const [data, setData] = useState<any>();
 
   useEffect(() => {
     const getData = async () => {
@@ -71,8 +71,9 @@ export default function AboutPage() {
 
   const title = 'About us';
 
-  if (!data) 
+  if (!data) {
     return '';
+  }
 
   return (
     <>

@@ -1,8 +1,8 @@
 'use client';
 
 import { SectionTitle } from '@/components/SectionTitle/SectionTitle';
-import { Title, Text, Container, Grid, Paper, Badge, Group, Stack, Tabs, Image, SimpleGrid, List, ThemeIcon } from '@mantine/core';
-import { IconBuildingSkyscraper, IconNetwork, IconFileImport, IconDeviceLaptop, IconCheck, IconTool } from '@tabler/icons-react';
+import { Title, Text, Container, Paper, Badge, Group, Stack, Tabs, Image, SimpleGrid, List, ThemeIcon } from '@mantine/core';
+import { IconNetwork, IconFileImport, IconDeviceLaptop, IconCheck } from '@tabler/icons-react';
 import { getProjectsPageData, urlFor } from '@/lib/sanity/utils';
 import { useEffect, useState } from 'react';
 
@@ -18,18 +18,6 @@ interface Project {
   completionDate?: string;
   projectDuration?: string;
   teamSize?: number;
-}
-
-// Icon mapping function
-function getIconComponent(iconType: string) {
-  const iconMap = {
-    network: IconNetwork,
-    fiber: IconFileImport,
-    laptop: IconDeviceLaptop,
-    building: IconBuildingSkyscraper,
-    tool: IconTool,
-  };
-  return iconMap[iconType as keyof typeof iconMap] || IconNetwork;
 }
 
 function ProjectCard({ project }: { project: Project }) {
@@ -176,8 +164,9 @@ export default function ProjectsPage() {
 
   }, []);
 
-  if (!data)
+  if (!data) {
     return '';
+  }
 
   return (
     <>

@@ -170,7 +170,6 @@ ${message}
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error('Contact form email error:', error);
     return NextResponse.json(
       { error: 'Failed to send message', details: error },
       { status: 500 }

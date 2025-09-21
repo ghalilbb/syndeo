@@ -2,7 +2,7 @@
 
 import { Grid, Card, Text, Title, Center, Box, Stack } from "@mantine/core";
 import classes from "./Characteristic.module.css";
-import { IconBell, IconChartBar, IconCircle, IconHandClick, IconLayersOff, IconZoom } from "@tabler/icons-react";
+import { IconBell, IconChartBar, IconLayersOff, IconZoom } from "@tabler/icons-react";
 
 const reasons = [
   {

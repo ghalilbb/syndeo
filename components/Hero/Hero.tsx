@@ -1,4 +1,4 @@
-import { Button, Container, Text, Title } from '@mantine/core';
+import { Container, Text, Title } from '@mantine/core';
 import classes from './Hero.module.css';
 
 export function Hero({title, subtitle}: {title: string, subtitle?: string}) {

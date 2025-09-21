@@ -1,9 +1,8 @@
 'use client';
 
 import { Title, Text, Container, Card, Group, Badge, Button, Stack, Grid, TextInput, Textarea, Select, Paper, ThemeIcon, Accordion, List, FileInput, rem } from '@mantine/core';
-import { IconUpload } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
-import { IconBriefcase, IconMail, IconSend, IconTool, IconChartBar, IconCode, IconBuildingSkyscraper } from '@tabler/icons-react';
+import { IconUpload, IconBriefcase, IconSend, IconTool, IconChartBar, IconCode, IconBuildingSkyscraper } from '@tabler/icons-react';
 import { SectionTitle } from '@/components/SectionTitle/SectionTitle';
 import { getCareersPageData } from '@/lib/sanity/utils';
 import { useEffect, useState } from 'react';
@@ -166,9 +165,13 @@ function ApplicationForm({ formConfig, positions }: { formConfig?: any; position
       phone: (value) => value.trim().length < 5 ? 'Valid phone number is required' : null,
       position: (value) => !value ? 'Please select a position' : null,
       resume: (value: File | null) => {
-        if (!value) return 'Resume is required';
+        if (!value) {
+           return 'Resume is required';
+        }
         const maxSize = (formConfig?.maxFileSize || 5) * 1024 * 1024;
-        if (value.size > maxSize) return `File size must be less than ${formConfig?.maxFileSize || 5}MB`;
+        if (value.size > maxSize) {
+           return `File size must be less than ${formConfig?.maxFileSize || 5}MB`;
+        }
         return null;
       },
     },

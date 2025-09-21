@@ -249,8 +249,9 @@ export default function ServicesPage() {
 
   }, []);
 
-  if (!data)
+  if (!data) {
     return '';
+  }
 
 
   return (
