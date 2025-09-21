@@ -92,7 +92,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsPage() {
 
-  const [data, setData] = useState();
+  const [data, setData] = useState<any>();
 
 
   // Fallback data if Sanity content is not available

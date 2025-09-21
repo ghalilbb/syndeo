@@ -160,7 +160,7 @@ function ServiceSection({ title, description, applications, icon: Icon, images, 
 
 export default function ServicesPage() {
 
-  const [data, setData] = useState();
+  const [data, setData] = useState<any>();
 
 
   // Fallback data if Sanity content is not available
