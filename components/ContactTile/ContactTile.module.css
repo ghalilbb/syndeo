@@ -12,7 +12,6 @@
 .form {
   flex: 1;
   padding: var(--mantine-spacing-xl);
-  padding-left: calc(var(--mantine-spacing-xl) * 2);
   border-left: 0;
   background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
   border-radius: var(--mantine-radius-lg);

@@ -4,7 +4,13 @@ import { MantineProvider, AppShell } from '@mantine/core';
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import { theme } from "@/theme";
+import { Inter } from 'next/font/google';
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: "Syndeo Infra",
@@ -22,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={inter.variable}>
+      <body className={inter.className}>
   <MantineProvider theme={theme}>
           <AppShell>
             <Header />

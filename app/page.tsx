@@ -26,7 +26,7 @@ export default function Home() {
       <section>
         <Characteristic/>
       </section>
-      <section>
+      <section id="contact">
         <ContactTile/>
       </section>
     </main>

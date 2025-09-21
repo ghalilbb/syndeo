@@ -1,5 +1,6 @@
-import { Container, Text, Title } from '@mantine/core';
+import { Button, Container, Text, Title } from '@mantine/core';
 import classes from './Hero.module.css';
+import Link from 'next/link';
 
 export function Hero({title, subtitle}: {title: string, subtitle?: string}) {
   return (
@@ -20,6 +21,10 @@ export function Hero({title, subtitle}: {title: string, subtitle?: string}) {
                     than 100 customizable components and hooks to cover you in any situation
                 </Text> : ''
             }
+            
+            <Button fullWidth c='blue' size="xl" radius="xl" className={classes.control}>
+                <Link href="#contact" style={{'textDecoration': 'none', 'color': 'white '}}>Get started</Link>
+              </Button>
             
           </div>
         </div>
