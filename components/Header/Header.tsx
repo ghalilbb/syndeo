@@ -1,6 +1,6 @@
 'use client'
 
-import { Burger, Container, Group, Title } from '@mantine/core';
+import { Burger, Container, Group, Title, Drawer, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
 import Link from 'next/link';
@@ -15,7 +15,7 @@ const links = [
 ];
 
 export function Header() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened, { toggle, close }] = useDisclosure(false);
 
   const items = links.map((link) => {
     // const menuItems = link.links?.map((item) => (
@@ -53,21 +53,60 @@ export function Header() {
     );
   });
 
+  const mobileItems = links.map((link) => (
+    <Link
+      key={link.label}
+      href={link.link}
+      className={classes.mobileLink}
+      onClick={close}
+    >
+      {link.label}
+    </Link>
+  ));
+
   return (
-    <header className={classes.header}>
-      <Container size="lg">
-        <div className={classes.inner}>
-          <Link
-        href="/"
+    <>
+      <header className={classes.header}>
+        <Container size="lg">
+          <div className={classes.inner}>
+            <Link
+          href="/"
+        >
+          <Title style={{'paddingTop': '16px'}}><Image src='/logo.jpg' height={85} width={250} alt='Syndeo logo'/></Title>
+        </Link>
+            <Group gap={5} visibleFrom="sm">
+              {items}
+            </Group>
+            <Burger 
+              opened={opened} 
+              onClick={toggle} 
+              size="sm" 
+              hiddenFrom="sm"
+              color="white"
+            />
+          </div>
+        </Container>
+      </header>
+
+      <Drawer
+        opened={opened}
+        onClose={close}
+        position="right"
+        size="xs"
+        title="Menu"
+        hiddenFrom="sm"
+        zIndex={1000000}
+        styles={{
+          content: { backgroundColor: 'var(--mantine-color-black)' },
+          header: { backgroundColor: 'var(--mantine-color-black)', color: 'white' },
+          title: { color: 'white', fontWeight: 600 },
+          body: { backgroundColor: 'var(--mantine-color-black)' }
+        }}
       >
-        <Title style={{'paddingTop': '16px'}}><Image src='/logo.jpg' height={85} width={250} alt='Syndeo logo'/></Title>
-      </Link>
-          <Group gap={5} visibleFrom="sm">
-            {items}
-          </Group>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-        </div>
-      </Container>
-    </header>
+        <Stack gap="md">
+          {mobileItems}
+        </Stack>
+      </Drawer>
+    </>
   );
 }
